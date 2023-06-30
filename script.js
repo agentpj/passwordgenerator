@@ -10,51 +10,53 @@ var charsNumeric = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9" ];
 
 function generatePassword() {
   var pwLength = prompt("Please enter your desired password length, minimum of 8, max of 128");
-    if (pwLength >= 8 && pwLength <=128) {
-      console.log(pwLength);}
-    else 
-       generatePassword();
+    if (pwLength < 8 || pwLength > 128) {
+      generatePassword;
+    }
 
     var userChoice = prompt ("Do you want Lower case in your password? Y or N");
-  userChoice = userChoice.toUpperCase();
+    console.log(userChoice); 
+    userChoice = userChoice.toUpperCase();
+ 
     if (userChoice == "Y") {
       var tempCharSelection = charsLowerCase;}
     else
       tempCharSelection = [];
-      
-  console.log("after Lower Case " + tempCharSelection);
 
   var userChoice = prompt ("Do you want Upper case in your password? Y or N");
+  console.log(userChoice);
   userChoice = userChoice.toUpperCase();
     if (userChoice == "Y") {
       tempCharSelection = tempCharSelection.concat(charsUpperCase);
     }
-  
-    console.log("after Upper Case  " + tempCharSelection); 
 
   var userChoice = prompt ("Do you want Special Characters in your password? Y or N");
+  console.log(userChoice);
     userChoice = userChoice.toUpperCase();
       if (userChoice == "Y") {
         tempCharSelection = tempCharSelection.concat(charSpecial);
        }
-      console.log("after Special  " + tempCharSelection);
 
   var userChoice = prompt ("Do you want numbers in your password? Y or N");
+  console.log(userChoice);
   userChoice = userChoice.toUpperCase();
     if (userChoice == "Y") {
       tempCharSelection = tempCharSelection.concat(charsNumeric);
      }
-    console.log("after Numeric " + tempCharSelection); 
+
    var password = "";
 
-  if (tempCharSelection.length < 1) {
+console.log(tempCharSelection.length);
+
+   if (tempCharSelection.length < 1) {
     alert("You need to make at least one selection");
-    return;}
+    return;
+  }
     
-    for (var i=0; i < pwLength; i++) {
+  for (var i=0; i < pwLength; i++) {
       var firstLetter = tempCharSelection[(Math.floor(Math.random()*tempCharSelection.length))];
       password=password.concat(firstLetter);
-    }
+  }
 
 return password; 
 }
