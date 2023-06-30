@@ -22,3 +22,6 @@ The user has the ability to re-generate a new password if they choose to.
 
 The github repository link for this project is:
 github link https://github.com/agentpj/passwordgenerator
+
+deployed url
+https://agentpj.github.io/passwordgenerator/
